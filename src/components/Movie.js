@@ -1,6 +1,8 @@
-import { movies } from "./../movies";
+import { useSelector } from "react-redux";
 
 export default function Movie(props) {
+
+  const movies = useSelector((store) => store.movies);
   const movie = movies[props.sira];
 
   return (
@@ -24,7 +26,7 @@ export default function Movie(props) {
           <span className="block px-2 py-1 rounded-md border border-zinc-400">{movie.year}</span>
           <span className="block px-2 py-1 rounded-md border border-zinc-400">{movie.runtime}dk</span>
         </div>
-      </div>
+        </div>
     </div>
   )
 };
